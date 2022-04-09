@@ -148,7 +148,7 @@ const Home: NextPage = () => {
         </InfoWrapper>
         <Title variant="h4">Categories</Title>
         <InfoWrapper container spacing={6} direction="row" justifyContent="center">
-          <Grid item onClick={() => router.push(routes.SHIRT)}>
+          <Grid item onClick={() => router.push(routes.SHIRT)} style={{cursor: 'pointer'}}>
             <Image
              alt="shirt"
              src="/shirt.jpg"
