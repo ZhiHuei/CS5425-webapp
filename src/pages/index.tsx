@@ -1,10 +1,10 @@
-import { Grid, Paper, styled, Typography } from "@mui/material";
+import { Box, Grid, Paper, styled, Typography } from "@mui/material";
 import type { NextPage } from "next";
 import PageLayout from "../components/PageLayout";
 import styles from "../styles/Home.module.css";
-import Image from 'next/image';
+import Image from "next/image";
 import routes from "../routes";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 
 const InfoWrapper = styled(Grid)(() => ({
   padding: "50px 0 50px 0",
@@ -27,18 +27,28 @@ const Description = styled(Typography)(() => ({
 }));
 
 const BoxItem = styled(Typography)(() => ({
-  paddingLeft: '20px',
+  paddingLeft: "20px",
   textAlign: "left",
   fontWeight: 600,
   fontSize: "1.5rem",
 }));
-
 
 const Home: NextPage = () => {
   const router = useRouter();
 
   return (
     <PageLayout>
+      <Box
+        sx={{
+          width: "100%",
+          maxWidth: `2600px`,
+          height: 650,
+          margin: "auto",
+          backgroundImage: `url('/Banner.png')`,
+          backgroundRepeat: `no-repeat`,
+          backgroundSize: `100% 100%`,
+        }}
+      ></Box>
       <div className={styles.container}>
         <Title variant="h4">SITE GUIDE</Title>
         <Description variant="h4">
@@ -70,7 +80,7 @@ const Home: NextPage = () => {
               >
                 RECOMMENDED
               </Title>
-              <Grid container style={{ gap: 60 }} direction="row">
+              <Grid container style={{ gap: 59 }} direction="row">
                 <GridItem item xs={5.5}>
                   <BoxItem>Good Condition</BoxItem>
                 </GridItem>
@@ -105,7 +115,7 @@ const Home: NextPage = () => {
                 borderRadius: 7,
                 borderColor: "#ff726f",
                 maxWidth: 1000,
-                backgroundColor:`rgba(255, 114, 111, 0.1)`,
+                backgroundColor: `rgba(255, 114, 111, 0.1)`,
               }}
             >
               <Title
@@ -120,7 +130,7 @@ const Home: NextPage = () => {
               >
                 THINK TWICE!
               </Title>
-              <Grid container style={{gap: 60}} direction='row' >
+              <Grid container style={{ gap: 59 }} direction="row">
                 <GridItem item xs={5.5}>
                   <BoxItem>Poor/Bad Condition</BoxItem>
                 </GridItem>
@@ -147,35 +157,44 @@ const Home: NextPage = () => {
           </Grid>
         </InfoWrapper>
         <Title variant="h4">Categories</Title>
-        <InfoWrapper container spacing={6} direction="row" justifyContent="center">
-          <Grid item onClick={() => router.push(routes.SHIRT)} style={{cursor: 'pointer'}}>
+        <InfoWrapper
+          container
+          spacing={6}
+          direction="row"
+          justifyContent="center"
+        >
+          <Grid
+            item
+            onClick={() => router.push(routes.SHIRT)}
+            style={{ cursor: "pointer" }}
+          >
             <Image
-             alt="shirt"
-             src="/shirt.jpg"
-             height={300}
-             width={500}
-             objectFit="cover"
-             quality={100}
+              alt="shoe"
+              src="/Shoes.png"
+              height={300}
+              width={500}
+              objectFit="cover"
+              quality={100}
             />
           </Grid>
           <Grid item>
             <Image
-             alt="mountains"
-             src="/mountains.jpg"
-             height={300}
-             width={500}
-             objectFit="cover"
-             quality={100}
+              alt="bags"
+              src="/Bags.png"
+              height={300}
+              width={500}
+              objectFit="cover"
+              quality={100}
             />
           </Grid>
           <Grid item>
             <Image
-             alt="mountains"
-             src="/mountains.jpg"
-             height={300}
-             width={500}
-             objectFit="cover"
-             quality={100}
+              alt="mountains"
+              src="/mountains.jpg"
+              height={300}
+              width={500}
+              objectFit="cover"
+              quality={100}
             />
           </Grid>
         </InfoWrapper>
