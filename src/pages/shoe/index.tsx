@@ -33,7 +33,7 @@ const mockedData: ItemType[] = [
     storeName: "Some store",
     merchant: "lazada",
     isRecommended: true,
-    isAuthentic: true,
+    isAuthentic: false,
   },
   {
     image:
@@ -43,7 +43,7 @@ const mockedData: ItemType[] = [
     storeName: "Some store",
     merchant: "lazada",
     isRecommended: false,
-    isAuthentic: true,
+    isAuthentic: false,
   },
   {
     image:

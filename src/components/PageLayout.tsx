@@ -15,7 +15,7 @@ const Title = styled(Typography)(() => ({
 
 const TitleContainer = styled("div")(() => ({
   width: "100%",
-  backgroundColor: "#36454F",
+  backgroundColor: "#080808",
   display: "flex",
   height: "100px",
   alignItems: "center",

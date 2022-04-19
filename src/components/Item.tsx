@@ -46,6 +46,19 @@ const Title = styled(Typography)(() => ({
   textAlign: "center",
   fontWeight: 550,
   fontSize: "1.3rem",
+  width: "fit-content",
+  padding: "0 10px 0 10px",
+}));
+
+const Label = styled(Typography)<Props>(({ item }) => ({
+  textAlign: "center",
+  fontWeight: 400,
+  fontSize: "1.0rem",
+  padding: "10px",
+  border: `5px solid`,
+  borderColor: item.isRecommended ? "lightgreen" : "#ff726f",
+  borderTop: 0,
+  borderRight: 0,
 }));
 
 const Item: FC<Props> = ({ item }) => {
@@ -65,7 +78,7 @@ const Item: FC<Props> = ({ item }) => {
         container
         direction="row"
         sx={{
-          padding: `0px !important`
+          padding: `0px !important`,
         }}
       >
         <Grid item>
@@ -73,9 +86,7 @@ const Item: FC<Props> = ({ item }) => {
             <Title
               variant="h4"
               style={{
-                width: "fit-content",
                 background: "lightgreen",
-                padding: "0 10px 0 10px",
               }}
             >
               RECOMMENDED
@@ -84,9 +95,7 @@ const Item: FC<Props> = ({ item }) => {
             <Title
               variant="h4"
               style={{
-                width: "fit-content",
                 background: "#ff726f",
-                padding: "0 10px 0 10px",
                 color: "white",
               }}
             >
@@ -94,12 +103,38 @@ const Item: FC<Props> = ({ item }) => {
             </Title>
           )}
         </Grid>
+        <Grid item marginLeft="auto">
+          {isAuthentic ? (
+            <Label
+              item={item}
+              variant="body1"
+              style={{
+                background: `black`,
+                color: `white`,
+              }}
+            >
+              AUTHENTIC
+            </Label>
+          ) : (
+            <Label
+              item={item}
+              variant="body1"
+              style={{
+                background: `white`,
+                color: `black`,
+                fontWeight: 550
+              }}
+            >
+              IMITATION
+            </Label>
+          )}
+        </Grid>
       </Grid>
       <img src={image}></img>
       <div>
         <Typography variant="h5">{title}</Typography>
         <Typography variant="h4" color="red">
-          ${price}
+          S${price}
         </Typography>
       </div>
       <Grid container direction="row">
