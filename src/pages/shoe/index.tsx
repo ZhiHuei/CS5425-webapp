@@ -1,8 +1,11 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, styled } from "@mui/material";
 import { NextPage } from "next";
 import Item, { ItemType } from "../../components/Item";
 import PageLayout from "../../components/PageLayout";
+import CircularProgress from "@mui/material/CircularProgress";
 import styles from "../../styles/Home.module.css";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const mockedData: ItemType[] = [
   {
@@ -50,14 +53,34 @@ const mockedData: ItemType[] = [
       "https://lzd-img-global.slatic.net/g/p/b61785b7238fe1fd27195ff87b3f1685.png_720x720q80.jpg_.webp",
     title: "Some titile",
     price: "10.0",
-    storeName: "Some store",
-    merchant: "lazada",
+    storeName: "Sports-Zone",
+    merchant: "shopee",
     isRecommended: true,
     isAuthentic: true,
   },
 ];
 
+const Center = styled("div")(() => ({
+  margin: "auto",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+}));
+
 const Home: NextPage = () => {
+  const [items, setItems] = useState<ItemType[]>([]);
+  useEffect(() => {
+    axios
+      .get(
+        "https://cs5425-pipeline-app.azurewebsites.net/api/http-get-items?keyword=New%20Balance%20Shoes"
+      )
+      .then((response) => {
+        setItems(response.data.items);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
   return (
     <PageLayout>
       <Box
@@ -72,15 +95,20 @@ const Home: NextPage = () => {
           backgroundSize: `100% 80%`,
         }}
       ></Box>
-
       <div className={styles.container}>
-        <Grid container spacing={3}>
-          {mockedData.map((item, index) => (
-            <Grid item key={index} xs={12} sm={3}>
-              <Item item={item}></Item>
-            </Grid>
-          ))}
-        </Grid>
+        {items.length > 0 ? (
+          <Grid container spacing={3}>
+            {items.map((item, index) => (
+              <Grid item key={index} xs={12} sm={3}>
+                <Item item={item} rank={index + 1}></Item>
+              </Grid>
+            ))}
+          </Grid>
+        ) : (
+          <Center>
+            <CircularProgress size="6rem" color="inherit"></CircularProgress>
+          </Center>
+        )}
       </div>
     </PageLayout>
   );

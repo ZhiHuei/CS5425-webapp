@@ -1,5 +1,5 @@
 import { Grid, styled, Typography } from "@mui/material";
-import { FC, memo } from "react";
+import { FC } from "react";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 export type ItemType = {
@@ -14,6 +14,7 @@ export type ItemType = {
 
 type Props = {
   item: ItemType;
+  rank?: number;
 };
 
 const Wrapper = styled("div")<Props>(({ item }) => ({
@@ -57,11 +58,25 @@ const Label = styled(Typography)<Props>(({ item }) => ({
   padding: "10px",
   border: `5px solid`,
   borderColor: item.isRecommended ? "lightgreen" : "#ff726f",
-  borderTop: 0,
+  borderTop: "none",
   borderRight: 0,
 }));
 
-const Item: FC<Props> = ({ item }) => {
+const Ranking = styled(Typography)<Props>(({ item }) => ({
+  textAlign: "center",
+  fontWeight: 600,
+  fontSize: "1.3rem",
+  padding: "10px",
+  color: item.isRecommended ? "lightgreen" : "#ff726f",
+  backgroundColor: "black",
+}));
+
+const Logo = styled("img")(() => ({
+  maxHeight: "inherit",
+  maxWidth: "inherit",
+}));
+
+const Item: FC<Props> = ({ item, rank }) => {
   const {
     image,
     title,
@@ -122,7 +137,7 @@ const Item: FC<Props> = ({ item }) => {
               style={{
                 background: `white`,
                 color: `black`,
-                fontWeight: 550
+                fontWeight: 550,
               }}
             >
               IMITATION
@@ -131,22 +146,32 @@ const Item: FC<Props> = ({ item }) => {
         </Grid>
       </Grid>
       <img src={image}></img>
+      <Ranking item={item} variant="body1">
+        PRODUCT RANKING: {rank}
+      </Ranking>
       <div>
         <Typography variant="h5">{title}</Typography>
         <Typography variant="h4" color="red">
           S${price}
         </Typography>
       </div>
-      <Grid container direction="row">
+      <Grid container direction="row" alignItems="center">
         <Grid item>
           <StyledDiv>
             <LocationOnIcon />
             <Typography variant="body1">{storeName}</Typography>
           </StyledDiv>
         </Grid>
-        <Grid item marginLeft="auto">
-          {merchant}
+        <Grid item marginLeft="auto" maxHeight={50} maxWidth={100}>
+          {merchant === "lazada" ? (
+            <Logo src="/laz-logo.png"></Logo>
+          ) : (
+            <Logo src="/shopee.png"></Logo>
+          )}
         </Grid>
+        {/* <Grid item marginLeft={1}>
+          <StartOutlinedIcon />
+        </Grid> */}
       </Grid>
     </Wrapper>
   );
