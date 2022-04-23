@@ -1,5 +1,6 @@
 const routes = {
-    SHIRT: '/shoe'
+    SHIRT: '/shoe',
+    BAG: '/bag'
 }
 
 export default routes;

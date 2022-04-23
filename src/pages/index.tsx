@@ -41,7 +41,7 @@ const Home: NextPage = () => {
       <Box
         sx={{
           width: "100%",
-          maxWidth: `2600px`,
+          maxWidth: `3000px`,
           height: 650,
           margin: "auto",
           backgroundImage: `url('/Banner.png')`,
@@ -177,7 +177,11 @@ const Home: NextPage = () => {
               quality={100}
             />
           </Grid>
-          <Grid item>
+          <Grid
+            item
+            onClick={() => router.push(routes.BAG)}
+            style={{ cursor: "pointer" }}
+          >
             <Image
               alt="bags"
               src="/Bags.png"

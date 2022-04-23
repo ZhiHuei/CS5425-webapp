@@ -86,7 +86,7 @@ const Home: NextPage = () => {
       <Box
         sx={{
           width: "100%",
-          maxWidth: `2600px`,
+          maxWidth: `3000px`,
           height: 550,
           margin: "auto",
           objectFit: `cover`,
