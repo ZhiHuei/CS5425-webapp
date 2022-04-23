@@ -80,26 +80,26 @@ const Home: NextPage = () => {
               >
                 RECOMMENDED
               </Title>
-              <Grid container style={{ gap: 59 }} direction="row">
-                <GridItem item xs={5.5}>
+              <Grid container rowSpacing={8} direction="row">
+                <GridItem item xs={6}>
                   <BoxItem>Good Condition</BoxItem>
                 </GridItem>
-                <GridItem item xs={5.5}>
+                <GridItem item xs={6}>
                   <BoxItem>Responsive Seller</BoxItem>
                 </GridItem>
-                <GridItem item xs={5.5}>
+                <GridItem item xs={6}>
                   <BoxItem>Well Packaged</BoxItem>
                 </GridItem>
-                <GridItem item xs={5.5}>
+                <GridItem item xs={6}>
                   <BoxItem>Positive Reviews</BoxItem>
                 </GridItem>
-                <GridItem item xs={5.5}>
+                <GridItem item xs={6}>
                   <BoxItem>Efficient Delivery</BoxItem>
                 </GridItem>
-                <GridItem item xs={5.5}>
+                <GridItem item xs={6}>
                   <BoxItem>{`>`}XX Quantities Sold</BoxItem>
                 </GridItem>
-                <GridItem item xs={5.5}>
+                <GridItem item xs={6}>
                   <BoxItem>Reliable Site</BoxItem>
                 </GridItem>
               </Grid>
@@ -130,26 +130,26 @@ const Home: NextPage = () => {
               >
                 THINK TWICE!
               </Title>
-              <Grid container style={{ gap: 59 }} direction="row">
-                <GridItem item xs={5.5}>
+              <Grid container rowSpacing={8} direction="row">
+                <GridItem item xs={6}>
                   <BoxItem>Poor/Bad Condition</BoxItem>
                 </GridItem>
-                <GridItem item xs={5.5}>
+                <GridItem item xs={6}>
                   <BoxItem>Less Responsive Seller</BoxItem>
                 </GridItem>
-                <GridItem item xs={5.5}>
+                <GridItem item xs={6}>
                   <BoxItem>Poorly Packaged</BoxItem>
                 </GridItem>
-                <GridItem item xs={5.5}>
+                <GridItem item xs={6}>
                   <BoxItem>Negative Reviews</BoxItem>
                 </GridItem>
-                <GridItem item xs={5.5}>
+                <GridItem item xs={6}>
                   <BoxItem>Delayed Delivery</BoxItem>
                 </GridItem>
-                <GridItem item xs={5.5}>
+                <GridItem item xs={6}>
                   <BoxItem>Little/No Quantities Sold</BoxItem>
                 </GridItem>
-                <GridItem item xs={5.5}>
+                <GridItem item xs={6}>
                   <BoxItem>Reliable Site</BoxItem>
                 </GridItem>
               </Grid>

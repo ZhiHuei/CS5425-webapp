@@ -7,59 +7,6 @@ import styles from "../../styles/Home.module.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const mockedData: ItemType[] = [
-  {
-    image:
-      "https://lzd-img-global.slatic.net/g/p/b61785b7238fe1fd27195ff87b3f1685.png_720x720q80.jpg_.webp",
-    title: "Some titile",
-    price: "10.0",
-    storeName: "Some store",
-    merchant: "lazada",
-    isRecommended: true,
-    isAuthentic: true,
-  },
-  {
-    image:
-      "https://lzd-img-global.slatic.net/g/p/b61785b7238fe1fd27195ff87b3f1685.png_720x720q80.jpg_.webp",
-    title: "Some titile",
-    price: "10.0",
-    storeName: "Some store",
-    merchant: "lazada",
-    isRecommended: false,
-    isAuthentic: true,
-  },
-  {
-    image:
-      "https://lzd-img-global.slatic.net/g/p/b61785b7238fe1fd27195ff87b3f1685.png_720x720q80.jpg_.webp",
-    title: "Some titile",
-    price: "10.0",
-    storeName: "Some store",
-    merchant: "lazada",
-    isRecommended: true,
-    isAuthentic: false,
-  },
-  {
-    image:
-      "https://lzd-img-global.slatic.net/g/p/b61785b7238fe1fd27195ff87b3f1685.png_720x720q80.jpg_.webp",
-    title: "Some titile",
-    price: "10.0",
-    storeName: "Some store",
-    merchant: "lazada",
-    isRecommended: false,
-    isAuthentic: false,
-  },
-  {
-    image:
-      "https://lzd-img-global.slatic.net/g/p/b61785b7238fe1fd27195ff87b3f1685.png_720x720q80.jpg_.webp",
-    title: "Some titile",
-    price: "10.0",
-    storeName: "Sports-Zone",
-    merchant: "shopee",
-    isRecommended: true,
-    isAuthentic: true,
-  },
-];
-
 const Center = styled("div")(() => ({
   margin: "auto",
   display: "flex",
