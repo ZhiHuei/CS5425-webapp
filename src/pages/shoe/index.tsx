@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 
 const Center = styled("div")(() => ({
   margin: "auto",
+  marginTop: '20px',
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -27,24 +28,24 @@ const Home: NextPage = () => {
       .catch((error) => {
         console.log(error);
       });
-  });
+  }, []);
   return (
     <PageLayout>
       <Box
         sx={{
           width: "100%",
           maxWidth: `3000px`,
-          height: 550,
+          height: 450,
           margin: "auto",
           objectFit: `cover`,
           backgroundImage: `url('/Shoes.png')`,
           backgroundRepeat: `no-repeat`,
-          backgroundSize: `100% 80%`,
+          backgroundSize: `100% 100%`,
         }}
       ></Box>
       <div className={styles.container}>
         {items.length > 0 ? (
-          <Grid container spacing={3}>
+          <Grid container marginTop={5} spacing={3}>
             {items.map((item, index) => (
               <Grid item key={index} xs={12} sm={3}>
                 <Item item={item} rank={index + 1}></Item>
