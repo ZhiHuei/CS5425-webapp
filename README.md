@@ -2,7 +2,7 @@ This is a web application for CS4225/CS5425 project. This web app is a portal in
 
  The core technologies used are React with Next.js and material ui components. 
 
-To run the application, simply run: 
+To run the application,
 1. First, run
 ```bash
 npm install
